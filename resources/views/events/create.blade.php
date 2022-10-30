@@ -7,6 +7,10 @@
         <form action="/events" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
+                <label for="date" class="form-label">Data do Evento</label>
+                <input id="date" name="date" class="form-control" type="date">
+            </div>
+            <div class="mb-3">
                 <label for="image" class="form-label">Imagem do Evento:</label>
                 <input id="image" name="image" class="form-control" type="file">
             </div>
@@ -28,6 +32,23 @@
             <div class="mb-3">
                 <label for="description" class="form-label">Descrição:</label>
                 <textarea class="form-control" name="description" id="description" placeholder="Observações do evento"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Adicione Itens de Infraestrutura:
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="items[]" value="cadeiras">Cadeiras
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="items[]" value="brindes">Cadeiras
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="items[]" value="palco">Palco
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="items[]" value="Open Food">Open Food
+                </div>
             </div>
             <input type="submit" value="Criar Evento" class="btn btn-primary">
         </form>
